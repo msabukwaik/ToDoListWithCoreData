@@ -15,6 +15,9 @@
 		572B99AC1F8BD93600B3689A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572B99AA1F8BD93600B3689A /* LaunchScreen.storyboard */; };
 		572B99B71F8BD93700B3689A /* ToDoListWithCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B99B61F8BD93700B3689A /* ToDoListWithCoreDataTests.swift */; };
 		572B99C21F8BD93700B3689A /* ToDoListWithCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B99C11F8BD93700B3689A /* ToDoListWithCoreDataUITests.swift */; };
+		572B99D31F8BDEBB00B3689A /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B99D21F8BDEBB00B3689A /* ToDoListViewController.swift */; };
+		572B99D41F8BDEBB00B3689A /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B99D21F8BDEBB00B3689A /* ToDoListViewController.swift */; };
+		572B99D51F8BDEBB00B3689A /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572B99D21F8BDEBB00B3689A /* ToDoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 		572B99BD1F8BD93700B3689A /* ToDoListWithCoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListWithCoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		572B99C11F8BD93700B3689A /* ToDoListWithCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListWithCoreDataUITests.swift; sourceTree = "<group>"; };
 		572B99C31F8BD93700B3689A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		572B99D21F8BDEBB00B3689A /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 				572B99AA1F8BD93600B3689A /* LaunchScreen.storyboard */,
 				572B99AD1F8BD93600B3689A /* Info.plist */,
 				572B99A51F8BD93600B3689A /* ToDoListWithCoreData.xcdatamodeld */,
+				572B99D21F8BDEBB00B3689A /* ToDoListViewController.swift */,
 			);
 			path = ToDoListWithCoreData;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572B99D31F8BDEBB00B3689A /* ToDoListViewController.swift in Sources */,
 				572B99A11F8BD93600B3689A /* ViewController.swift in Sources */,
 				572B99A71F8BD93600B3689A /* ToDoListWithCoreData.xcdatamodeld in Sources */,
 				572B999F1F8BD93600B3689A /* AppDelegate.swift in Sources */,
@@ -272,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572B99D41F8BDEBB00B3689A /* ToDoListViewController.swift in Sources */,
 				572B99B71F8BD93700B3689A /* ToDoListWithCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572B99D51F8BDEBB00B3689A /* ToDoListViewController.swift in Sources */,
 				572B99C21F8BD93700B3689A /* ToDoListWithCoreDataUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
