@@ -1,8 +1,8 @@
 //
-//  Note+CoreDataClass.swift
+//  NoteMO+CoreDataClass.swift
 //  ToDoListWithCoreData
 //
-//  Created by Mohammed S A Kwaik on 10/9/17.
+//  Created by Mohammed S A Kwaik on 10/10/17.
 //  Copyright © 2017 Mohammed S A Kwaik. All rights reserved.
 //
 //
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Note)
-public class Note: NSManagedObject {
+@objc(NoteMO)
+public class NoteMO: NSManagedObject {
 
 }

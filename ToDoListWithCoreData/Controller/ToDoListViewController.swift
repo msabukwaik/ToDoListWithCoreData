@@ -7,31 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
-class ToDoListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ToDoListViewController: UIViewController {
     
-    let notes:[String] = ["Note 1", "Note 2", "Note 3", "Note 4", "Note 5",
-                          "Note 6", "Note 7", "Note 8", "Note 9", "Note 10"]
+    @IBOutlet weak var notesTableView: UITableView!
+    var notes:[NoteMO] = []
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = notes[indexPath.row]
-        return cell
-    }
-    
-
     @IBOutlet weak var addToDoListBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Fetch request
+        let fetchRequest:NSFetchRequest<NoteMO> = NoteMO.fetchRequest()
+        //let results = PresistentStore.
+        
+        do {
+            let notes = try PresistentStore.context.fetch(fetchRequest)
+            self.notes = notes
+            self.notesTableView.reloadData()
+        } catch  {
+            
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -40,9 +38,6 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
     
     @IBAction func addToDoListBtnHandler(_ sender: Any) {
         let addListAlert = UIAlertController(title: "New Note", message: "Please enter the title and the description of the note", preferredStyle: .alert)
@@ -64,13 +59,20 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { (alertAction) in
             print("saveAction ")
-            guard let _ = addListAlert.textFields?[0].text else {
+            guard let title = addListAlert.textFields?[0].text else {
                 return
             }
             
-            guard let _ = addListAlert.textFields?[1].text else {
+            guard let description = addListAlert.textFields?[1].text else {
                 return
             }
+            
+            let noteMO = NoteMO(context:PresistentStore.context)
+            noteMO.note_title = title
+            noteMO.note_description = description
+            PresistentStore.saveContext()
+            self.notes.append(noteMO)
+            self.notesTableView.reloadData()
             
         }
         
@@ -92,3 +94,23 @@ class ToDoListViewController: UIViewController, UITableViewDataSource, UITableVi
 
 }
 
+extension ToDoListViewController:UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = notes[indexPath.row].note_title
+        cell.detailTextLabel?.text = notes[indexPath.row].note_description
+        return cell
+    }
+}
+
+extension ToDoListViewController: UITableViewDelegate{
+    
+}

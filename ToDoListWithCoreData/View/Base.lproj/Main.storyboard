@@ -67,6 +67,7 @@
                     </view>
                     <connections>
                         <outlet property="addToDoListBtn" destination="1f9-SP-0Ea" id="mYS-4f-Gf0"/>
+                        <outlet property="notesTableView" destination="Fkx-92-efS" id="1hS-cO-eMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
